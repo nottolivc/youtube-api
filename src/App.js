@@ -20,7 +20,6 @@ const fetchData = async (url) => {
   setLoading(true);
   const data = await axios.get(`${baseUrl}/${url}`, {
     params: {
-        //key: 'AIzaSyDVaQm89lEvlCfeB5ArCXPhv12Lak65_nU',
         key: process.env.REACT_APP_API_KEY,
         maxResults: '10',
     },
@@ -33,7 +32,6 @@ const fetchData = async (url) => {
 const fetchDefaultData = async (url) => {
   const getDefaultData = await axios.get(`${baseUrl}/${url}`, {
     params: {
-      //key: 'AIzaSyDVaQm89lEvlCfeB5ArCXPhv12Lak65_nU',
       key: process.env.REACT_APP_API_KEY,
       maxResults: '10',
   },
