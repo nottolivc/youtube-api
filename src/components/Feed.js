@@ -37,7 +37,7 @@ const Feed = () => {
       </Box>
       <Box>
         <Typography>
-          <h4>Popular Videos</h4>
+          Popular Videos
         </Typography>
       </Box>
       <Box>
