@@ -15,13 +15,15 @@ const Feed = () => {
       fetchData(`videos?part=snippet&chart=mostPopular`);
     }
     fetchDefaultData('videoCategories?part=snippet');
-  }, [keyword, fetchData, fetchDefaultData]);
+  }, [keyword]);
 
   if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
+    <>
+    <div className='container'>
     <Box>
       <Box className='categories'>
           {results?.map((category) => (
@@ -35,7 +37,7 @@ const Feed = () => {
       </Box>
       <Box>
         <Typography>
-          {keyword || 'Recommended'} Videos
+          <h4>Popular Videos</h4>
         </Typography>
       </Box>
       <Box>
@@ -48,6 +50,8 @@ const Feed = () => {
         ))}
       </Box>
     </Box>
+    </div>
+    </>
   );
 };
 

@@ -25,7 +25,7 @@ const Detail = () => {
     document.title = videoDetail?.snippet?.title;
   }
   return (
-    <>
+      <>
       {videoDetail && (
         <Box className='video-detail-container'>
           <Box>
@@ -36,7 +36,7 @@ const Detail = () => {
               </Typography>
               <Box>
                 <Box sx={{ opacity: 0.8 }}>
-                  <Typography sx={{ marginBottom: '5px' }}>
+                  <Typography>
                     {parseInt(
                       videoDetail?.statistics?.viewCount
                     ).toLocaleString('en-US')}{' '}
@@ -46,13 +46,8 @@ const Detail = () => {
               </Box>
             </Box>
           </Box>
-          <Box
-            sx={{
-              mt: 10,
-            }}
-            className='related-videos'
-          >
-            <Typography>Related Videos</Typography>
+          <div>
+            <Typography><h4>Related</h4></Typography>
             <Box className='related-videos-container'>
               {data?.map((video) => (
                 <Item
@@ -62,8 +57,8 @@ const Detail = () => {
                 />
               ))}
             </Box>
+            </div>
           </Box>
-        </Box>
       )}
     </>
   );
