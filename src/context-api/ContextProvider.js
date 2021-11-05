@@ -33,7 +33,7 @@ export const ContextProvider = ({ children }) => {
     console.log(seedData);
   };
 
-  
+
   return (
     <Context.Provider
       value={{

@@ -138,8 +138,10 @@
   width: 70%;
   height: 700px;
   padding-bottom: 45px;
-  position: relative;
   border-radius: 4px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
 }
 .related-videos {
   display: flex;
@@ -152,8 +154,10 @@
 
 .video-card {
   height: 700px !important;
-  width: 1440px !important;
+  width: 800px !important;
+  border-radius: 8px;
 }
+
 .category-button:hover {
   color: black;
 }

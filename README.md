@@ -1,5 +1,7 @@
 # Getting Started with Create React App
+IMPORTANT: API Key for YouTube must be set to your env variable as REACT_APP_API_KEY by you for requests to return 200 OK, Authorized.
 
+YouTubeAPI v3 - In progress as a client side app to mock the youtube client UI
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

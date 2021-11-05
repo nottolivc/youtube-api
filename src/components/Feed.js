@@ -18,8 +18,7 @@ const Feed = () => {
     // eslint-disable-next-line 
   }, [keyword]);
 
-  if (loading) {
-    return <><br /><div>Loading...</div></>};
+  if (loading) {return <div>Loading...</div>}
 
   return (
     <>
