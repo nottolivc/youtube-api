@@ -6,7 +6,7 @@ import Nav from './components/Nav';
 import Detail from './components/Detail';
 import Search from './components/Search';
 import Header from './components/Header';
-import SidePanel from './components/SidePanel';
+//import SidePanel from './components/SidePanel';
 
 const App = () => {
   return (
@@ -14,7 +14,6 @@ const App = () => {
         <Header />
         <div className='App'>
         <Nav />
-        {/* <SidePanel className='column left /> */}
         <Route path='/search' component={Search} />
         <Switch>
           <Route exact path='/' className='column left' component={Feed} />
