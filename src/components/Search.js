@@ -23,11 +23,12 @@ const Search = () => {
           ))} */}
         {data?.map((video) => (
           <>
-          <div className='left'>
+        <div className='left'>
           <Item
             video={video}
             id={(video.id.videoId && video.id.videoId) || video.id}
             key={(video.id.videoId && video.id.videoId) || video.id}
+            style={{}}
           />
           </div>
           <div className='right' key={video.id}>

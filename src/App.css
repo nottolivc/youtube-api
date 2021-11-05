@@ -63,11 +63,16 @@ a {
   
   .left {
     float: center;
-    padding: 70px;
+    padding: 48px;
   }
 
   .right {
-    display: none;
+    display: inline-block;
+    margin-right: 190px;
+    text-align: center;
+    height: 320px;
+    flex-flow: wrap;
+    align-items: center;
   }
   .card {
     display: flex;
