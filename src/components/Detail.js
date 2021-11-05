@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Box } from '@mui/material';
+import { Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useStateContext } from '../context-api/ContextProvider';
 import ReactPlayer from 'react-player';
