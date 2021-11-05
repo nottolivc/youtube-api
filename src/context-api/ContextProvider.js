@@ -13,7 +13,7 @@ export const ContextProvider = ({ children }) => {
     setLoading(true);
     const data = await axios.get(`${baseUrl}/${url}`, {
       params: {
-        key: 'AIzaSyDVaQm89lEvlCfeB5ArCXPhv12Lak65_nU',
+        key: process.env.REACT_APP_API_KEY,
         maxResults: 5,
       },
     });
@@ -23,15 +23,17 @@ export const ContextProvider = ({ children }) => {
   };
 
   const fetchDefaultData = async (url) => {
-    const data1 = await axios.get(`${baseUrl}/${url}`, {
+    const seedData = await axios.get(`${baseUrl}/${url}`, {
       params: {
-        key: 'AIzaSyDVaQm89lEvlCfeB5ArCXPhv12Lak65_nU',
+        key: process.env.REACT_APP_API_KEY,
         maxResults: 5,
       },
     });
-    setResults(data1?.data?.items);
+    setResults(seedData?.data?.items);
+    console.log(seedData);
   };
 
+  
   return (
     <Context.Provider
       value={{

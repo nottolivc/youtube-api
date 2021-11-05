@@ -15,11 +15,11 @@ const Feed = () => {
       fetchData(`videos?part=snippet&chart=mostPopular`);
     }
     fetchDefaultData('videoCategories?part=snippet');
+    // eslint-disable-next-line 
   }, [keyword]);
 
   if (loading) {
-    return <div>Loading...</div>;
-  }
+    return <><br /><div>Loading...</div></>};
 
   return (
     <>

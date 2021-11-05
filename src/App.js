@@ -15,7 +15,7 @@ const App = () => {
         <Header />
         <div className='App'>
         <Nav />
-        {/* <SidePanel /> */}
+        <SidePanel />
         <Switch>
           <Route exact path='/' component={Feed} />
           <Route path='/video-details/:id' component={Detail} />
