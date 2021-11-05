@@ -11,17 +11,30 @@ const Search = () => {
   }
   return (
     <>
-    <div className='container'>
-    <Box className='card'>
-      {data.length !== 0 &&
-        data.map((video) => (
+    <br />
+    <br />
+    <h4>Search Results</h4>
+    <div className='left'>
+        {/* {data?.map((category) => (
+            <Box
+              key={category?.id}>
+              {category?.snippet?.title}
+            </Box>
+          ))} */}
+        {data?.map((video) => (
+          <>
+          <div className='left'>
           <Item
-            key={video.id.videoId}
             video={video}
-            id={video.id.videoId}
+            id={(video.id.videoId && video.id.videoId) || video.id}
+            key={(video.id.videoId && video.id.videoId) || video.id}
           />
+          </div>
+          <div className='right'>
+            <h5 className='description'>Description: {video?.snippet?.description}</h5>
+          </div>
+          </>
         ))}
-    </Box>
     </div>
     </>
   );

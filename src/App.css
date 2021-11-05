@@ -1,6 +1,27 @@
 .App {
   text-align: center;
   background: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+.left {
+  float: left;
+  width: 45%;
+  padding: 20px;
+}
+
+.right {
+  float: right;
+  width: 35%;
+  padding: 20px;
+}
+
+.description {
+  display: flex;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #aaa;
+  margin-left: 90%;
 }
 
 .video-icon {

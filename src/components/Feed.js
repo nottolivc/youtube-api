@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { useStateContext } from '../context-api/ContextProvider';
-import VideoItem from './Item';
+import Item from './Item';
 
 
 const Feed = () => {
@@ -22,10 +22,13 @@ const Feed = () => {
 
   return (
     <>
-    <div className='container'>
-    <Box>
-      <Box className='categories'>
-          {results?.map((category) => (
+    <br />
+    <br />
+     <Typography>
+          Popular Videos
+        </Typography>
+    <div className='left'>
+        {results?.map((category) => (
             <Button
               className='category-button'
               onClick={() => setKeyword(category.snippet.title)}
@@ -33,22 +36,20 @@ const Feed = () => {
               {category?.snippet?.title}
             </Button>
           ))}
-      </Box>
-      <Box>
-        <Typography>
-          Popular Videos
-        </Typography>
-      </Box>
-      <Box>
         {data?.map((video) => (
-          <VideoItem
+          <>
+          <div className='left'>
+          <Item
             video={video}
             id={(video.id.videoId && video.id.videoId) || video.id}
             key={(video.id.videoId && video.id.videoId) || video.id}
           />
+          </div>
+          <div className='right'>
+            <h5 className='description'>Description: {video?.snippet?.description}</h5>
+          </div>
+          </>
         ))}
-      </Box>
-    </Box>
     </div>
     </>
   );

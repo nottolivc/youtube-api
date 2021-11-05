@@ -6,7 +6,7 @@ const Item = ({ video, id }) => {
   
   return (
     <>
-    <div className="container">
+    <div>
     <Link to={video?.snippet?.thumbnails?.medium.url ? `/video-details/${id}` : `/video-details/cV2gBU6hKfY`}
       onClick={() => window.scrollTo(0, 0)}>
       <Card className='card'>
