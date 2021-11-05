@@ -13,11 +13,11 @@ export const ContextProvider = ({ children }) => {
     setLoading(true);
     const data = await axios.get(`${baseUrl}/${url}`, {
       params: {
-        key: process.env.REACT_APP_API_KEY,
+        key: 'AIzaSyDx3Rw7MYBiBkXmzYVe39LUv6MpO8fQFnY',
         maxResults: 5,
       },
     });
-    console.log(data);
+    console.log(data.data);
     setData(data?.data?.items);
     setLoading(false);
   };
@@ -25,12 +25,12 @@ export const ContextProvider = ({ children }) => {
   const fetchDefaultData = async (url) => {
     const seedData = await axios.get(`${baseUrl}/${url}`, {
       params: {
-        key: process.env.REACT_APP_API_KEY,
+        key: 'AIzaSyDx3Rw7MYBiBkXmzYVe39LUv6MpO8fQFnY',
         maxResults: 5,
       },
     });
     setResults(seedData?.data?.items);
-    console.log(seedData);
+    console.log(seedData.data);
   };
 
 

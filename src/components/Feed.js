@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Typography, Button } from '@mui/material';
+import {  Button, CircularProgress  } from '@mui/material';
 import { useStateContext } from '../context-api/ContextProvider';
 import Item from './Item';
 
@@ -17,17 +17,15 @@ const Feed = () => {
     fetchDefaultData('videoCategories?part=snippet');
     // eslint-disable-next-line 
   }, [keyword]);
-
-  if (loading) {return <div>Loading...</div>}
+  if (loading) {
+  return <div>Loading...<br /><CircularProgress /></div>};
 
   return (
     <>
     <br />
     <br />
-     <Typography>
-          Popular Videos
-        </Typography>
-    <div className='left'>
+     <h2>Popular Videos</h2>
+      <div className='left'>
         {results?.map((category) => (
             <Button
               className='category-button'
@@ -45,8 +43,13 @@ const Feed = () => {
             key={(video.id.videoId && video.id.videoId) || video.id}
           />
           </div>
-          <div className='right'>
-            <h5 className='description'>Description: {video?.snippet?.description}</h5>
+          <div className='right' key={video.id}>
+            <div className='description' style={{textAlign: 'left', padding: '20px'}}>
+              <h4>{video?.snippet?.title}</h4>
+              <h5>{video?.snippet?.publishedAt}</h5>
+              <h5>{video?.snippet?.channelTitle}</h5>
+              <p>{video?.snippet?.description}</p>
+              </div>
           </div>
           </>
         ))}

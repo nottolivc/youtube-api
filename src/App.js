@@ -15,7 +15,7 @@ const App = () => {
         <Route path='/search' component={Search} />
         <Switch>
           <Route exact path='/' className='column left' component={Feed} />
-          
+
           <Route path='/video-details/:id' className='column right' component={Detail} />
         </Switch>
         </div>

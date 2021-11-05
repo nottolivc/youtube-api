@@ -8,6 +8,7 @@
   float: left;
   width: 45%;
   padding: 20px;
+  /* border: 1px solid whitesmoke;  */
 }
 
 .right {
@@ -16,12 +17,92 @@
   padding: 20px;
 }
 
+h2 {
+  font-size: 1.5em;
+  margin: 0;
+  color:#444;
+}
+
+p {
+  font-size: 0.7rem;
+  margin: 0;
+  color:rgb(121, 120, 120);
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
 .description {
   display: flex;
+  flex-flow: column;
   font-size: 1rem;
   font-weight: bold;
-  color: #aaa;
+  color: rgb(90, 89, 89);
   margin-left: 90%;
+  overflow: hidden;
+  width: 550px;
+  height: 357px;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  /* border: 1px solid whitesmoke;  */
+  box-shadow: 1px 1px 1px #ccc;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 1000px) {
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+  }
+  
+  .left {
+    float: center;
+    padding: 70px;
+  }
+
+  .right {
+    display: none;
+  }
+  .card {
+    display: flex;
+    width: 250px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px
+  }
+  
+  .play-video {
+    width: 70%;
+    height: 500px;
+    padding-bottom: 25px;
+    border-radius: 4px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+  }
+  .related-videos {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 20%;
+    padding: 15px;
+  }
+  
+  .video-card {
+    height: 400px !important;
+    width: 500px !important;
+    border-radius: 8px;
+  }
 }
 
 .video-icon {
@@ -117,10 +198,10 @@
   font-weight: bold;
 }
 
-.flex-container {
+/* .flex-container {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .side-panel {
   display: flex;
@@ -141,7 +222,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 80%;
+  width: 100%;
 }
 
 .card {
@@ -185,6 +266,10 @@
 .search-bar {
   border: none;
   outline: none;
+  background: whitesmoke;
+  border-radius: 4px;
+  padding: 4px;
+  width: 20%;
 }
 .search-bar:focus {
   border-color: black !important;

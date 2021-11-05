@@ -14,7 +14,8 @@ const Item = ({ video, id }) => {
           component='img'
           height='250'
           image={video?.snippet?.thumbnails?.high.url || 'no img'}
-          alt=''/>
+          alt='No Preview Available'
+        />
         <CardContent>
           <Typography>{video?.snippet?.title}</Typography>
         </CardContent>
