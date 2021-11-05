@@ -5,9 +5,11 @@ import { Typography, Card, CardContent, CardMedia } from '@mui/material';
 const Item = ({ video, id }) => {
   
   return (
+    <>
+    <div className="container">
     <Link to={video?.snippet?.thumbnails?.medium.url ? `/video-details/${id}` : `/video-details/cV2gBU6hKfY`}
       onClick={() => window.scrollTo(0, 0)}>
-      <Card className='recipe-card'>
+      <Card className='card'>
         <CardMedia
           component='img'
           height='250'
@@ -18,6 +20,8 @@ const Item = ({ video, id }) => {
         </CardContent>
       </Card>
     </Link>
+    </div>
+    </>
   );
 };
 

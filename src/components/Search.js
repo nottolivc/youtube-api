@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box } from '@mui/material';
-import VideoItem from './Item';
+import Item from './Item';
 import { useStateContext } from '../context-api/ContextProvider';
 
 
@@ -10,16 +10,20 @@ const Search = () => {
     return <div>Loading...</div>;
   }
   return (
+    <>
+    <div className='container'>
     <Box className='card'>
       {data.length !== 0 &&
         data.map((video) => (
-          <VideoItem
+          <Item
             key={video.id.videoId}
             video={video}
             id={video.id.videoId}
           />
         ))}
     </Box>
+    </div>
+    </>
   );
 };
 
