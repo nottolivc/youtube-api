@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import MenuIcon from '@material-ui/icons/Menu';
 //import SearchIcon from '@material-ui/icons/Search';
@@ -6,12 +6,15 @@ import VideoCallIcon from '@material-ui/icons/VideoCall';
 import AppsIcon from '@material-ui/icons/Apps';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import Avatar from '@material-ui/core/Avatar';
+import { ThemeContext } from '../context-api/ThemeContext';
 
 const Header = () => {  
+  const theme = useContext(ThemeContext);
 
 return (
         <>
-        <div className='header'>
+        <ThemeContext.Provider value={theme}>
+        <div className={`header${theme.darkMode ? "_dark" : ""}`}>
           <div className="header-left">
           <MenuIcon />
               <Link to='/'><img className='header-logo' 
@@ -27,6 +30,7 @@ return (
           </div>
           </div>
         </div>
+        </ThemeContext.Provider>
         </>
     )
 }

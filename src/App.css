@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background: white;
+  color:rgb(90, 89, 89);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -15,6 +15,57 @@
   float: right;
   width: 35%;
   padding: 20px;
+}
+
+.App_dark {
+  background: #222;
+  color: whitesmoke;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.item_dark {
+  background: #222;
+  color: whitesmoke;
+}
+.left_dark {
+  background: #222;
+  color: #aaa;
+  float: left;
+  width: 45%;
+  padding: 20px;
+}
+
+.right_dark {
+  /* z-index: 99; */
+  background: #222;
+  color: #aaa;
+  float: right;
+  width: 35%;
+  padding: 20px;
+}
+
+.nav_dark {
+  background: #333;
+  color: whitesmoke;
+}
+
+.nav {
+  background: rgb(255, 254, 254);
+  color: #555;
+  box-shadow: 2px 1px 2px #ccc;
+}
+
+.header_dark {
+  background: #333;
+  color: #aaa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
 }
 
 h2 {
@@ -49,6 +100,34 @@ a {
   /* border: 1px solid whitesmoke;  */
   box-shadow: 1px 1px 1px #ccc;
   border-radius: 5px;
+}
+
+.description_dark {
+  display: flex;
+  flex-flow: column;
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgb(201, 198, 198);
+  margin-left: 90%;
+  overflow: hidden;
+  width: 550px;
+  height: 357px;
+  text-overflow: ellipsis;
+  white-space: wrap;
+  background: #222;
+  border: 1px solid #333;
+  /* box-shadow: 1px 1px 1px #ccc; */
+  border-radius: 5px;
+
+}
+
+.toggle {
+  color: rgb(185, 48, 48);
+}
+.toggle:hover{
+  color: rgb(243, 62, 62);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 1000px) {

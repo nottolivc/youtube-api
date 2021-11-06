@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Typography } from '@mui/material';
 import { useParams } from 'react-router-dom';
 import { useStateContext } from '../context-api/ContextProvider';
 import ReactPlayer from 'react-player';
 import Item from './Item';
+import { ThemeContext } from '../context-api/ThemeContext';
 
 const Detail = () => {
-  
+  const theme = useContext(ThemeContext);
   const { id } = useParams();
   const { data, fetchData, fetchDefaultData, results } = useStateContext();
   const [videoDetail, setVideoDetail] = useState();
@@ -26,7 +27,8 @@ const Detail = () => {
   }
   return (
       <>
-        <div className='left'>
+      <ThemeContext.Provider value={theme}>
+        <div className={`left${theme.darkMode ? "_dark" : ""}`}>
               <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} />
               <Typography>
                 {videoDetail?.snippet?.title}
@@ -38,7 +40,7 @@ const Detail = () => {
                     views
                   </Typography>
             </div>
-            <div className='right'>
+            <div className={`right${theme.darkMode ? "_dark" : ""}`}>
             <Typography>Related</Typography>
               {data?.map((video) => (
                 <Item
@@ -48,6 +50,7 @@ const Detail = () => {
                 />
               ))}
           </div>
+        </ThemeContext.Provider>
     </>
   );
 };
