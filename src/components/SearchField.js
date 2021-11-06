@@ -1,13 +1,16 @@
-import React, { useState } from 'react';
-import { Paper, IconButton } from '@mui/material';
+import React, { useState, useContext } from 'react';
+import { IconButton } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useHistory } from 'react-router';
 import { useStateContext } from '../context-api/ContextProvider';
+
+import { ThemeContext } from '../context-api/ThemeContext';
 
 const SearchField = () => {
   const [searchTerm, setSearchTerm] = useState();
   const history = useHistory();
   const { fetchData } = useStateContext();
+  const theme = useContext(ThemeContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -16,7 +19,10 @@ const SearchField = () => {
   };
 
   return (
-    <Paper component='form' onSubmit={handleSubmit}>
+    <>
+    <ThemeContext.Provider value={theme}>
+    <div className={`${theme.darkMode ? "_dark" : ""}`}>
+    <form onSubmit={handleSubmit}>
       <input
         className='search-bar'
         placeholder='Search...'
@@ -30,7 +36,10 @@ const SearchField = () => {
       <IconButton type='submit' aria-label='search'>
         <SearchIcon />
       </IconButton>
-    </Paper>
+    </form>
+    </div>
+    </ThemeContext.Provider>
+    </>
   );
 };
 

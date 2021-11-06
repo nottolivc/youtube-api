@@ -1,19 +1,24 @@
-import React from 'react';
-import { Typography, Box } from '@mui/material';
+import React, { useContext } from 'react';
+import { Typography } from '@mui/material';
 import SearchField from './SearchField';
 import { Link } from 'react-router-dom';
-
+import { ThemeContext } from '../context-api/ThemeContext';
 
 const Nav = () => {
+  const theme = useContext(ThemeContext);
   return (
-    <Box>
-      <Link to='/' style={{ textDecoration: 'none' }}>
+    <>
+    <ThemeContext.Provider value={theme}>
+    <div className={`nav${theme.darkMode ? "_dark" : ""}`}>
+      <Link to='/'>
         <Typography>
           YouTube API
         </Typography>
-      </Link>
+        </Link>
       <SearchField />
-    </Box>
+    </div>
+    </ThemeContext.Provider>
+    </>
   );
 };
 
