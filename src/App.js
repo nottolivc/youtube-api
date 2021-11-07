@@ -31,10 +31,10 @@ const App = () => {
           <Route path='/search' component={Search} />
           <Switch>
             <Route exact path='/' component={Feed} />
-            <Route path='/' component={SidePanel} />
             <Route path='/video-details/:id' component={Detail} />
           </Switch>
       </Router>
+      <SidePanel />
     </div>
     </ThemeContext.Provider>
     </>
