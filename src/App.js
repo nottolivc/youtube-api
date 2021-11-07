@@ -17,7 +17,6 @@ const App = () => {
     setDarkMode(!darkMode);
   };
   
-  
   return (
     <>
     <ThemeContext.Provider value={theme}>
