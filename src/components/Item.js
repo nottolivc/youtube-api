@@ -2,10 +2,12 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, Card, CardContent, CardMedia } from '@mui/material';
 import { ThemeContext } from '../context-api/ThemeContext';
-
+import Moment from 'react-moment';
 
 const Item = ({ video, id }) => {
   const theme = useContext(ThemeContext);
+  //const dateToFormat = new Date('1976-04-19T12:59-0500');
+  
   return (
     <>
     <ThemeContext.Provider value={theme}>
@@ -21,6 +23,8 @@ const Item = ({ video, id }) => {
         />
         <CardContent>
           <Typography>{video?.snippet?.title}</Typography>
+              <h5>{video?.snippet?.channelTitle}</h5>
+              <h5><Moment format="YYYY/MM/DD">{video?.snippet?.publishedAt}</Moment></h5>
         </CardContent>
       </Card>
     </Link>

@@ -3,13 +3,13 @@ import { CircularProgress  } from '@mui/material';
 import { useStateContext } from '../context-api/ContextProvider';
 import Item from './Item';
 import { ThemeContext } from '../context-api/ThemeContext';
+import Moment from 'react-moment';
 
 const Feed = () => {
   const { data, loading, results, fetchData, fetchDefaultData } = useStateContext();
   const [keyword, setKeyword] = useState();
   
   const theme = useContext(ThemeContext);
-
   useEffect(() => {
     if (keyword) {
       fetchData(`search?part=snippet&q=${keyword}`);
@@ -45,14 +45,13 @@ const Feed = () => {
             video={video}
             id={(video.id.videoId && video.id.videoId) || video.id}
             key={(video.id.videoId && video.id.videoId) || video.id}
-            style={{}}
           />
           </div>
           <div className={`right${theme.darkMode ? "_dark" : ""}`} key={video.id}>
             <div className={`description${theme.darkMode ? "_dark" : ""}`} style={{textAlign: 'left', padding: '20px'}}>
               <h4>{video?.snippet?.title}</h4>
-              <h5>{video?.snippet?.publishedAt}</h5>
               <h5>{video?.snippet?.channelTitle}</h5>
+              <h5><Moment format="YYYY/MM/DD">{video?.snippet?.publishedAt}</Moment></h5>
               <p>{video?.snippet?.description}</p>
               </div>
           </div>

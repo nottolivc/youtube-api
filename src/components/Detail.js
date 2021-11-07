@@ -30,7 +30,7 @@ const Detail = () => {
       <ThemeContext.Provider value={theme}>
         <div className={`left${theme.darkMode ? "_dark" : ""}`}>
         <div className={`container${theme.darkMode ? "_dark" : ""}`}>
-              <ReactPlayer className={`App${theme.darkMode ? "_dark" : ""}`} url={`https://www.youtube.com/watch?v=${id}`} />
+              <ReactPlayer controls className={`App${theme.darkMode ? "_dark" : ""}`} url={`https://www.youtube.com/watch?v=${id}`} />
               <br />
               <br />
               <h2>{videoDetail?.snippet?.title}</h2>
@@ -38,8 +38,9 @@ const Detail = () => {
                     ).toLocaleString('en-US')}{' '}Views</Typography>
             </div>
             </div>
+            <div className={`more-related-videos${theme.darkMode ? "_dark" : ""}`}>
             <div className={`right${theme.darkMode ? "_dark" : ""}`}>
-            <Typography>Related</Typography>
+            <Typography>Related Videos</Typography>
               {data?.map((video) => (
                 <Item
                   video={video}
@@ -48,8 +49,9 @@ const Detail = () => {
                 />
               ))}
             </div>
+            </div>
             <div className={`related-videos${theme.darkMode ? "_dark" : ""}`}>
-            <Typography>Related</Typography>
+            <Typography>More Related</Typography>
               {data?.map((video) => (
                 <Item
                   video={video}
