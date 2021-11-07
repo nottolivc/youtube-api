@@ -7,6 +7,7 @@ import Detail from './components/Detail';
 import Search from './components/Search';
 import Header from './components/Header';
 import { ThemeContext } from './context-api/ThemeContext';
+import SidePanel from './components/SidePanel';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -33,6 +34,7 @@ const App = () => {
             <Route path='/video-details/:id' component={Detail} />
           </Switch>
       </Router>
+      <SidePanel />
     </div>
     </ThemeContext.Provider>
     </>

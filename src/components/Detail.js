@@ -5,6 +5,7 @@ import { useStateContext } from '../context-api/ContextProvider';
 import ReactPlayer from 'react-player';
 import Item from './Item';
 import { ThemeContext } from '../context-api/ThemeContext';
+import uuid from 'react-uuid';
 
 const Detail = () => {
   const theme = useContext(ThemeContext);
@@ -45,7 +46,7 @@ const Detail = () => {
                 <Item
                   video={video}
                   id={(video.id.videoId && video.id.videoId) || video.id}
-                  key={(video.id.videoId && video.id.videoId) || video.id}
+                  key={uuid()}
                 />
               ))}
             </div>
@@ -56,7 +57,7 @@ const Detail = () => {
                 <Item
                   video={video}
                   id={(video.id.videoId && video.id.videoId) || video.id}
-                  key={(video.id.videoId && video.id.videoId) || video.id}
+                  key={uuid()}
                 />
               ))}
           </div>

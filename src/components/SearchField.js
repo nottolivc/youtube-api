@@ -7,7 +7,7 @@ import { useStateContext } from '../context-api/ContextProvider';
 import { ThemeContext } from '../context-api/ThemeContext';
 
 const SearchField = () => {
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState();
   const history = useHistory();
   const { fetchData } = useStateContext();
   const theme = useContext(ThemeContext);
@@ -31,12 +31,16 @@ const SearchField = () => {
           if (e.target.value !== '') {
             setSearchTerm(e.target.value);
           }
+          else {
+            setSearchTerm('');
+          }
         }}
       />
       <IconButton type='submit' aria-label='search'>
         <SearchIcon />
       </IconButton>
     </form>
+      <br />
     </div>
     </ThemeContext.Provider>
     </>
