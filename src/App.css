@@ -1,17 +1,24 @@
+body {
+  text-align: center;
+  color:rgb(116, 116, 116);
+  font-family: 'Roboto', sans-serif;
+}
+
 .App {
   text-align: center;
-  color:rgb(90, 89, 89);
+  color:rgb(116, 116, 116);
   font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
 }
 
 .left {
   float: left;
   width: 45%;
   padding: 20px;
-  /* border: 1px solid whitesmoke;  */
 }
 
-.right {
+.right{
   float: right;
   width: 35%;
   padding: 20px;
@@ -21,6 +28,17 @@
   background: #222;
   color: whitesmoke;
   text-align: center;
+  color:rgb(90, 89, 89);
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+
+body.App_dark {
+  background: #222;
+  color: whitesmoke;
+  text-align: center;
+  color:rgb(90, 89, 89);
   font-family: 'Roboto', sans-serif;
 }
 
@@ -28,6 +46,7 @@
   background: #222;
   color: whitesmoke;
 }
+
 .left_dark {
   background: #222;
   color: #aaa;
@@ -37,7 +56,6 @@
 }
 
 .right_dark {
-  /* z-index: 99; */
   background: #222;
   color: #aaa;
   float: right;
@@ -135,24 +153,31 @@ a {
   .container {
     display: flex;
     flex-direction: column;
+    flex-flow: wrap;
     align-items: center;
     justify-content: center;
-    width: 90%;
+    width: 100%;
   }
   
   .left {
     float: center;
-    padding: 48px;
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
   }
 
   .right {
-    display: inline-block;
-    margin-right: 190px;
-    text-align: center;
-    height: 320px;
-    flex-flow: wrap;
+    float: center;
+    display: flex;
+    width: 200px;
     align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
+
   .card {
     display: flex;
     width: 250px;
@@ -161,7 +186,62 @@ a {
     justify-content: center;
     flex-direction: column;
     margin: 20px;
-    padding: 20px
+    padding: 20px;
+    /* position: absolute; */
+    /* z-index: -99; */
+  }
+
+  .container_dark {
+    display: flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #222;
+    color: rgb(211, 210, 210);
+  }
+  
+  .left_dark {
+    float: center;
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(211, 210, 210);
+  }
+
+  .right_dark {
+    float: center;
+    display: flex;
+    width: 200px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgb(211, 210, 210);
+
+  }
+
+  .card_dark {
+    display: flex;
+    width: 250px;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 20px;
+    padding: 20px;
+    color: rgb(211, 210, 210);
+  }
+
+  .search-bar {
+    border: none;
+    outline: none;
+    background: whitesmoke;
+    border-radius: 4px;
+    padding: 4px;
+    width: 45%;
   }
   
   .play-video {
@@ -174,11 +254,10 @@ a {
     align-items: center;
   }
   .related-videos {
-    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    width: 20%;
+    width: 70%;
     padding: 15px;
   }
   
@@ -198,7 +277,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
+  padding: 12px;
   position: sticky;
   top: 0;
   z-index: 99;
@@ -282,10 +361,6 @@ a {
   font-weight: bold;
 }
 
-/* .flex-container {
-  display: flex;
-  flex-direction: row;
-} */
 
 .side-panel {
   display: flex;
@@ -304,9 +379,18 @@ a {
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   justify-content: center;
   width: 100%;
+}
+
+.container_dark {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  width: 100%;
+  background: #222;
 }
 
 .card {
@@ -316,8 +400,8 @@ a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 20px;
-  padding: 20px
+  margin: 12px;
+  padding: 12px
 }
 
 .play-video {
@@ -329,6 +413,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .related-videos {
   display: flex;
   flex-direction: column;
@@ -336,6 +421,16 @@ a {
   justify-content: space-between;
   width: 25%;
   padding: 15px;
+}
+
+.related-videos_dark {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 25%;
+  padding: 15px;
+  background: #222;
 }
 
 .video-card {
@@ -347,14 +442,16 @@ a {
 .category-button:hover {
   color: black;
 }
+
 .search-bar {
   border: none;
   outline: none;
   background: whitesmoke;
   border-radius: 4px;
-  padding: 4px;
-  width: 20%;
+  padding: 8px;
+  width: 35%;
 }
+
 .search-bar:focus {
   border-color: black !important;
   outline: none !important;
