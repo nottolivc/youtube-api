@@ -30,7 +30,7 @@ export const ContextProvider = ({ children }) => {
       },
     });
     setResults(seedData?.data?.items);
-    console.log(seedData.data);
+    //console.log(seedData.data);
   };
 
 

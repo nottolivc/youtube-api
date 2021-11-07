@@ -25,7 +25,7 @@ const App = () => {
           <Header />
           <Nav />
           <div onClick={toggleMode} className={`container${theme.darkMode ? "_dark" : ""}`}>
-              <h5 className='toggle'>Click to toggle Dark Mode</h5>
+              <h5 className='toggle'>Click here for Dark Mode</h5>
           </div>
           <Route path='/search' component={Search} />
           <Switch>
