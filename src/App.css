@@ -159,6 +159,24 @@ a {
     justify-content: center;
     width: 100%;
   }
+
+  .App {
+    text-align: center;
+    color:rgb(116, 116, 116);
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .App_dark {
+    background: #222;
+    color: whitesmoke;
+    text-align: center;
+    color:rgb(90, 89, 89);
+    font-family: 'Roboto', sans-serif;
+    height: 100%;
+    width: 100%;
+  }
   
   .left {
     float: center;

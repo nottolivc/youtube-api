@@ -31,8 +31,7 @@ const Detail = () => {
       <ThemeContext.Provider value={theme}>
         <div className={`left${theme.darkMode ? "_dark" : ""}`}>
         <div className={`container${theme.darkMode ? "_dark" : ""}`}>
-              <ReactPlayer controls className={`App${theme.darkMode ? "_dark" : ""}`} 
-              url={`https://www.youtube.com/watch?v=${id}`} />
+              <ReactPlayer controls className={`App${theme.darkMode ? "_dark" : ""}`} url={`https://www.youtube.com/watch?v=${id}`} />
               <br />
               <br />
               <h2>{videoDetail?.snippet?.title}</h2>
