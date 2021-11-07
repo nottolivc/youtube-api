@@ -4,10 +4,11 @@ import { useStateContext } from '../context-api/ContextProvider';
 import Item from './Item';
 import { ThemeContext } from '../context-api/ThemeContext';
 import Moment from 'react-moment';
+import uuid from 'react-uuid';
 
 const Feed = () => {
   const { data, loading, results, fetchData, fetchDefaultData } = useStateContext();
-  const [keyword, setKeyword] = useState();
+  const [keyword, setKeyword] = useState('');
   
   const theme = useContext(ThemeContext);
   useEffect(() => {
@@ -44,10 +45,10 @@ const Feed = () => {
           <Item
             video={video}
             id={(video.id.videoId && video.id.videoId) || video.id}
-            key={(video.id.videoId && video.id.videoId) || video.id}
+            key={uuid()}
           />
           </div>
-          <div className={`right${theme.darkMode ? "_dark" : ""}`} key={video.id}>
+          <div className={`right${theme.darkMode ? "_dark" : ""}`} key={uuid()}>
             <div className={`description${theme.darkMode ? "_dark" : ""}`} style={{textAlign: 'left', padding: '20px'}}>
               <h4>{video?.snippet?.title}</h4>
               <h5>{video?.snippet?.channelTitle}</h5>

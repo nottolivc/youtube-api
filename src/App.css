@@ -106,39 +106,37 @@ a {
 .description {
   display: flex;
   flex-flow: column;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: rgb(90, 89, 89);
-  margin-left: 90%;
+  margin-left: 95%;
   overflow: hidden;
-  width: 550px;
-  height: 357px;
+  width: 70vh;
+  height: 42vh;
   text-overflow: ellipsis;
   white-space: wrap;
-  /* border: 1px solid whitesmoke;  */
+  border: 1px solid whitesmoke; 
   box-shadow: 1px 1px 1px #ccc;
   border-radius: 5px;
-  /* background: rgb(247, 247, 247); */
   margin-top: 4vh;
 }
 
 .description_dark {
   display: flex;
   flex-flow: column;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: rgb(201, 198, 198);
-  margin-left: 90%;
+  margin-left: 95%;
   overflow: hidden;
-  margin-top: 4vh;
-  width: 550px;
-  height: 357px;
+  width: 70vh;
+  height: 42vh;
   text-overflow: ellipsis;
   white-space: wrap;
-  background: #111;
-  border: 1px solid #333;
-  /* box-shadow: 1px 1px 1px #ccc; */
+  border: 1px solid rgb(44, 44, 44); 
+  box-shadow: 1px 1px 1px rgb(48, 47, 47);
   border-radius: 5px;
+  margin-top: 4vh;
 
 }
 
@@ -287,6 +285,42 @@ a {
     width: 500px !important;
     border-radius: 8px;
   }
+
+  .description {
+    display: flex;
+    flex-flow: column;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(90, 89, 89);
+    margin-left: 15%;
+    overflow: hidden;
+    width: 45vh;
+    height: 45vh;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    box-shadow: 0px 0px 1px #ccc;
+    border-radius: 5px;
+    margin-top: 4vh;
+    align-items: left;
+  }
+  
+  .description_dark {
+    display: flex;
+    flex-flow: column;
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgb(201, 198, 198);
+    margin-left: 95%;
+    overflow: hidden;
+    width: 54vh;
+    height: 40vh;
+    text-overflow: ellipsis;
+    white-space: wrap;
+    border: 1px solid rgb(44, 44, 44); 
+    box-shadow: 1px 1px 1px rgb(48, 47, 47);
+    border-radius: 5px;
+    margin-top: 4vh;
+  }  
 }
 
 .video-icon {
@@ -416,7 +450,7 @@ a {
 
 .card {
   display: flex;
-  width: 350px;
+  width: 45vh;
   height: 100%;
   align-items: center;
   justify-content: center;

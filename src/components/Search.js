@@ -4,6 +4,7 @@ import Item from './Item';
 import { useStateContext } from '../context-api/ContextProvider';
 import { ThemeContext } from '../context-api/ThemeContext';
 import Moment from 'react-moment';
+import uuid from 'react-uuid';
 
 const Search = () => {
   const { data, loading } = useStateContext();
@@ -24,11 +25,10 @@ const Search = () => {
           <Item
             video={video}
             id={(video.id.videoId && video.id.videoId) || video.id}
-            key={(video.id.videoId && video.id.videoId) || video.id}
-            style={{}}
+            key={uuid()}
           />
           </div>
-          <div className={`right${theme.darkMode ? "_dark" : ""}`} key={video.id}>
+          <div className={`right${theme.darkMode ? "_dark" : ""}`} key={uuid()}>
             <div className={`description${theme.darkMode ? "_dark" : ""}`} style={{textAlign: 'left', padding: '20px'}}>
               <h4>{video?.snippet?.title}</h4>
               <h5>{video?.snippet?.channelTitle}</h5>
