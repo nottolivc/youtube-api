@@ -10,13 +10,12 @@ import { ThemeContext } from './context-api/ThemeContext';
 
 const App = () => {
   const [darkMode, setDarkMode] = useState(false);
-  const theme = {
-    darkMode, setDarkMode,
-  };
+  const theme = { darkMode, setDarkMode};
   const toggleMode = e => {
     e.preventDefault();
     setDarkMode(!darkMode);
   };
+  
   
   return (
     <>
@@ -25,13 +24,13 @@ const App = () => {
       <Router>
           <Header />
           <Nav />
-          <div onClick={toggleMode} className='container'>
-              {/* <h5 className='toggle'>Click to toggle Dark Mode</h5> */}
+          <div onClick={toggleMode} className={`container${theme.darkMode ? "_dark" : ""}`}>
+              <h5 className='toggle'>Click to toggle Dark Mode</h5>
           </div>
           <Route path='/search' component={Search} />
           <Switch>
-            <Route exact path='/' className='column left' component={Feed} />
-            <Route path='/video-details/:id' className='column right' component={Detail} />
+            <Route exact path='/' component={Feed} />
+            <Route path='/video-details/:id' component={Detail} />
           </Switch>
       </Router>
     </div>

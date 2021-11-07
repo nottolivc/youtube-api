@@ -28,15 +28,15 @@ const Feed = () => {
     <ThemeContext.Provider value={theme}>
     <br />
     <br />
+    <div className={`container${theme.darkMode ? "_dark" : ""}`}>
      <h2>Popular Videos</h2>
       <div className={`left${theme.darkMode ? "_dark" : ""}`}>
         {results?.map((category) => (
-            <Button
-              className='category-button'
+          <p style={{ color: 'darkred'}}
               onClick={() => setKeyword(category.snippet.title)}
               key={category?.id}>
               {category?.snippet?.title}
-            </Button>
+            </p>
           ))}
         {data?.map((video) => (
           <>
@@ -58,6 +58,7 @@ const Feed = () => {
           </div>
           </>
         ))}
+    </div>
     </div>
     </ThemeContext.Provider>
     </>

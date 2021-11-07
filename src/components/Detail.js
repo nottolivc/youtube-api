@@ -29,18 +29,26 @@ const Detail = () => {
       <>
       <ThemeContext.Provider value={theme}>
         <div className={`left${theme.darkMode ? "_dark" : ""}`}>
-              <ReactPlayer url={`https://www.youtube.com/watch?v=${id}`} />
-              <Typography>
-                {videoDetail?.snippet?.title}
-              </Typography>
-                  <Typography>
-                    {parseInt(
-                      videoDetail?.statistics?.viewCount
-                    ).toLocaleString('en-US')}{' '}
-                    views
-                  </Typography>
+        <div className={`container${theme.darkMode ? "_dark" : ""}`}>
+              <ReactPlayer className={`App${theme.darkMode ? "_dark" : ""}`} url={`https://www.youtube.com/watch?v=${id}`} />
+              <br />
+              <br />
+              <h2>{videoDetail?.snippet?.title}</h2>
+                  <Typography>{parseInt(videoDetail?.statistics?.viewCount
+                    ).toLocaleString('en-US')}{' '}Views</Typography>
+            </div>
             </div>
             <div className={`right${theme.darkMode ? "_dark" : ""}`}>
+            <Typography>Related</Typography>
+              {data?.map((video) => (
+                <Item
+                  video={video}
+                  id={(video.id.videoId && video.id.videoId) || video.id}
+                  key={(video.id.videoId && video.id.videoId) || video.id}
+                />
+              ))}
+            </div>
+            <div className={`related-videos${theme.darkMode ? "_dark" : ""}`}>
             <Typography>Related</Typography>
               {data?.map((video) => (
                 <Item

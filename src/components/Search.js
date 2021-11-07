@@ -13,7 +13,7 @@ const Search = () => {
   return (
     <>
     <ThemeContext.Provider value={theme}>
-    <br />
+    <div className={`container${theme.darkMode ? "_dark" : ""}`}>
     <h2>Search Results</h2>
 
     <div className={`left${theme.darkMode ? "_dark" : ""}`}>
@@ -43,6 +43,7 @@ const Search = () => {
           </div>
           </>
         ))}
+    </div>
     </div>
     </ThemeContext.Provider>
     </>
