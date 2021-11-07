@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import {  Button, CircularProgress  } from '@mui/material';
+import { CircularProgress  } from '@mui/material';
 import { useStateContext } from '../context-api/ContextProvider';
 import Item from './Item';
 import { ThemeContext } from '../context-api/ThemeContext';
